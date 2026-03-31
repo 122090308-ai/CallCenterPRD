@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>NusaCall — 印尼 Call Center SaaS 立项产品文档</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#1a73e8;--g:#1ab26b;--o:#e65100;--r:#d32f2f;--pu:#7b1fa2;--bg:#f0f4fb;--sur:#fff;--bor:#dde3ef;--txt:#1d2433;--txt2:#5a6280}
+body{font-family:'PingFang SC','Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--txt);font-size:14px}
+.nav{position:sticky;top:0;z-index:99;background:#fff;border-bottom:1px solid var(--bor);display:flex;align-items:center;padding:0 24px;height:50px;gap:4px;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.nav .logo{font-size:17px;font-weight:700;color:var(--p);margin-right:24px}
+.nav a{padding:5px 11px;border-radius:5px;font-size:12px;color:var(--txt2);text-decoration:none;white-space:nowrap}
+.nav a:hover,.nav a.on{background:#e8f0fe;color:var(--p);font-weight:600}
+.nav .badge{margin-left:auto;background:#fff3e0;color:#e65100;border:1px solid #ffcc80;border-radius:20px;font-size:11px;padding:3px 12px;font-weight:600;white-space:nowrap}
+.wrap{max-width:1100px;margin:0 auto;padding:28px 18px 60px}
+.cover{background:linear-gradient(135deg,#1a73e8,#0d47a1);color:#fff;border-radius:14px;padding:38px 44px;margin-bottom:32px;display:flex;justify-content:space-between;align-items:center;gap:20px;box-shadow:0 4px 24px rgba(26,115,232,.22)}
+.cover h1{font-size:27px;font-weight:700;line-height:1.3;margin-bottom:8px}
+.cover .sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.cover .meta{display:flex;gap:20px;flex-wrap:wrap}
+.cover .mi strong{display:block;font-size:13px;margin-bottom:1px}
+.cover .mi{font-size:11px;opacity:.75}
+.cover .flag{font-size:60px;flex-shrink:0}
+.sec{margin-bottom:36px}
+.sec-t{font-size:17px;font-weight:700;border-left:4px solid var(--p);padding-left:12px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.num{background:var(--p);color:#fff;border-radius:50%;width:21px;height:21px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.card{background:var(--sur);border-radius:10px;border:1px solid var(--bor);padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 10px rgba(26,115,232,.07)}
+.card h3{font-size:14px;font-weight:600;margin-bottom:10px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.stat{background:var(--sur);border-radius:10px;border:1px solid var(--bor);padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.stat .n{font-size:24px;font-weight:700;color:var(--p)}
+.stat .l{font-size:11px;color:var(--txt2);margin-top:4px}
+.stat .t{font-size:11px;color:var(--g);margin-top:3px;font-weight:600}
+.fi{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--bor)}
+.fi:last-child{border-bottom:none}
+.fic{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.fb{background:#e8f0fe}.fg{background:#e6f4ea}.fo{background:#fff3e0}.fp{background:#f3e8fd}
+.ft{font-size:13px;font-weight:600;margin-bottom:3px}
+.fd{font-size:12px;color:var(--txt2);line-height:1.5}
+.pt{font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600;margin-left:5px}
+.p0c{background:#fce8e6;color:#d32f2f}.p1c{background:#fff3e0;color:#e65100}.p2c{background:#e6f4ea;color:#1ab26b}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px}
+.tag{padding:3px 9px;border-radius:20px;font-size:12px;font-weight:500}
+.tb{background:#e8f0fe;color:#1a73e8}.tg{background:#e6f4ea;color:#1ab26b}
+.to{background:#fff3e0;color:#e65100}.tr{background:#fce8e6;color:#d32f2f}.tp{background:#f3e8fd;color:#7b1fa2}
+.cmp{width:100%;border-collapse:collapse;font-size:12px}
+.cmp th{background:#e8f0fe;color:var(--p);font-weight:600;padding:9px 12px;text-align:left;border-bottom:2px solid var(--bor)}
+.cmp td{padding:8px 12px;border-bottom:1px solid var(--bor);vertical-align:middle}
+.cmp tr:last-child td{border-bottom:none}
+.our{background:#f0f9ff;font-weight:600;color:var(--p)}
+.ck{color:var(--g)}.cx{color:var(--r)}.ch{color:var(--o)}
+.pric{border-radius:10px;border:2px solid var(--bor);padding:18px 16px;text-align:center;background:#fff}
+.pric.hot{border-color:var(--p);box-shadow:0 0 0 3px rgba(26,115,232,.1)}
+.pric .plan{font-size:11px;font-weight:700;text-transform:uppercase;color:var(--txt2);letter-spacing:1px;margin-bottom:6px}
+.pric .price{font-size:26px;font-weight:700;color:var(--p)}
+.pric .price span{font-size:12px;font-weight:400;color:var(--txt2)}
+.pric .pidr{font-size:11px;color:var(--txt2);margin-bottom:10px}
+.pric ul{text-align:left;list-style:none;font-size:12px;color:var(--txt2);line-height:1.9}
+.pric ul li::before{content:'✓  ';color:var(--g);font-weight:700}
+.pric .cta{margin-top:12px;display:block;padding:7px;border-radius:6px;font-size:12px;font-weight:600}
+.pric.hot .cta{background:var(--p);color:#fff}.pric:not(.hot) .cta{background:#e8f0fe;color:var(--p)}
+.tl{position:relative;padding-left:26px}
+.tl::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--bor)}
+.tli{position:relative;margin-bottom:18px}
+.tld{position:absolute;left:-22px;top:4px;width:12px;height:12px;border-radius:50%;border:2px solid var(--p);background:#fff}
+.tld.done{background:var(--p)}
+.tldate{font-size:11px;color:var(--txt2);font-weight:600;margin-bottom:2px}
+.tltit{font-size:13px;font-weight:600;margin-bottom:3px}
+.tldes{font-size:12px;color:var(--txt2);line-height:1.5}
+.ri{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--bor)}
+.ri:last-child{border-bottom:none}
+.rl{font-size:11px;font-weight:700;padding:3px 7px;border-radius:4px;flex-shrink:0;min-width:32px;text-align:center}
+.rh{background:#fce8e6;color:#d32f2f}.rm{background:#fff3e0;color:#e65100}.rlo{background:#e6f4ea;color:#1ab26b}
+.rt2{font-size:13px;font-weight:600;margin-bottom:2px}
+.rd{font-size:12px;color:var(--txt2)}
+.proto-entry{background:linear-gradient(135deg,#1a1f36,#2d3561);border-radius:12px;padding:28px 32px;text-align:center;margin-top:24px}
+.proto-entry h2{color:#fff;font-size:20px;margin-bottom:8px}
+.proto-entry p{color:rgba(255,255,255,.7);font-size:13px;margin-bottom:18px}
+.proto-entry a{display:inline-block;background:#1a73e8;color:#fff;padding:10px 28px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none}
+.proto-entry a:hover{background:#1558b0}
+@media(max-width:800px){.g3,.g4{grid-template-columns:1fr 1fr}.cover{flex-direction:column}}
+@media(max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr}.cover{padding:22px 18px}.wrap{padding:14px 10px 40px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="logo">🏝️ NusaCall</div>
+  <a href="#market" class="on">市场分析</a>
+  <a href="#product">产品定义</a>
+  <a href="#feature">功能规划</a>
+  <a href="#compete">竞品</a>
+  <a href="#biz">商业模式</a>
+  <a href="#roadmap">路线图</a>
+  <a href="#risk">风险</a>
+  <a href="nusacall_prototype.html">🖥️ 原型图 →</a>
+  <div class="badge">📋 立项文档 v1.0 · 2026-Q1</div>
+</nav>
+<div class="wrap">
+
+<div class="cover">
+  <div>
+    <h1>NusaCall<br>印尼市场 Call Center SaaS 平台</h1>
+    <div class="sub">专为印尼中大型企业打造的全渠道智能客服云平台</div>
+    <div class="meta">
+      <div class="mi"><strong>立项负责人</strong>腾讯 IEG 出海产品中心</div>
+      <div class="mi"><strong>目标市场</strong>印度尼西亚</div>
+      <div class="mi"><strong>文档版本</strong>v1.0 · 2026-03-30</div>
+      <div class="mi"><strong>预计上线</strong>2026 Q4</div>
+      <div class="mi"><strong>机密等级</strong>内部使用</div>
+    </div>
+  </div>
+  <div class="flag">🇮🇩</div>
+</div>
+
+<!-- 1. 市场分析 -->
+<div class="sec" id="market">
+  <div class="sec-t"><div class="num">1</div>市场分析</div>
+  <div class="g4">
+    <div class="stat"><div class="n">$554M</div><div class="l">2024 印尼联络中心软件市场规模</div><div class="t">↑ CAGR 18.6%，2032预计$518B</div></div>
+    <div class="stat"><div class="n">2.78亿</div><div class="l">印尼总人口（全球第四大）</div><div class="t">↑ 互联网渗透率 77%</div></div>
+    <div class="stat"><div class="n">$76B</div><div class="l">2025 年印尼数字经济规模</div><div class="t">↑ 东南亚最大数字经济体</div></div>
+    <div class="stat"><div class="n">Top 3</div><div class="l">WhatsApp 渗透率全球前三</div><div class="t">→ 全渠道接入核心场景</div></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <h3>📊 市场机遇</h3>
+      <div class="fi"><div class="fic fb">🚀</div><div><div class="ft">数字化转型红利期</div><div class="fd">Tokopedia、Shopee、GoPay、J&T 等行业爆发增长，客服云化需求激增。</div></div></div>
+      <div class="fi"><div class="fic fg">📱</div><div><div class="ft">移动优先 + WhatsApp 生态</div><div class="fd">92% 用户通过手机上网，WhatsApp MAU 达 1.2 亿+，是客服沟通首选渠道。</div></div></div>
+      <div class="fi"><div class="fic fo">🏗️</div><div><div class="ft">传统 PBX 亟待升级</div><div class="fd">大量企业使用老旧本地 PBX，运维成本高、扩展性差，迫切需要 SaaS 化迁移。</div></div></div>
+    </div>
+    <div class="card">
+      <h3>🎯 目标客户画像</h3>
+      <div class="fi"><div class="fic fb">🛒</div><div><div class="ft">电商 & 零售</div><div class="fd">中大型平台、品牌商家，坐席 50-500 人，需 WhatsApp + 电话全渠道统一处理。</div></div></div>
+      <div class="fi"><div class="fic fg">🏦</div><div><div class="ft">金融 & 保险</div><div class="fd">银行、P2P、保险公司，对通话录音、合规存档、数据本地化要求极高。</div></div></div>
+      <div class="fi"><div class="fic fo">🚚</div><div><div class="ft">物流 & 出行</div><div class="fd">快递、即时配送、Gojek 类平台，高峰并发大，需弹性扩容和 AI 自动化分流。</div></div></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:0">
+    <h3>🌏 本地化关键挑战</h3>
+    <div class="g3">
+      <div><div class="tags" style="margin-bottom:7px"><span class="tag tr">合规</span></div><div style="font-size:12px;color:var(--txt2);line-height:1.7">印尼《个人数据保护法》（UU PDP，2022）要求敏感数据<strong>本地存储</strong>，违规最高罚款 2% 全球营收。须在雅加达部署 IDC 节点。</div></div>
+      <div><div class="tags" style="margin-bottom:7px"><span class="tag tb">语言</span></div><div style="font-size:12px;color:var(--txt2);line-height:1.7">界面须支持<strong>印尼语（Bahasa Indonesia）</strong>，AI 语音需覆盖 Javanese、Sundanese 方言。TTS/STT 印尼语能力是核心壁垒。</div></div>
+      <div><div class="tags" style="margin-bottom:7px"><span class="tag to">支付</span></div><div style="font-size:12px;color:var(--txt2);line-height:1.7">定价以<strong>印尼盾（IDR）</strong>计价，需对接 BCA、Mandiri 银行转账及 GoPay、OVO 等电子钱包。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. 产品定义 -->
+<div class="sec" id="product">
+  <div class="sec-t"><div class="num">2</div>产品定义</div>
+  <div class="card">
+    <h3>🎯 产品愿景</h3>
+    <p style="font-size:13px;color:var(--txt2);line-height:1.9;margin-bottom:12px"><strong>成为印尼最懂本地客户的全渠道智能客服 SaaS 平台。</strong><br>通过深度本地化（Bahasa AI + 本地 IDC + 印尼合规）+ 腾讯云底层能力，帮助印尼企业用<strong>更低成本</strong>提供<strong>更好的客户服务体验</strong>，同时以<strong>AI 辅助工具</strong>大幅降低单次服务成本。</p>
+    <div class="tags"><span class="tag tb">全渠道统一</span><span class="tag tg">AI 驱动</span><span class="tag to">印尼本地化</span><span class="tag tp">合规优先</span><span class="tag tb">开箱即用 SaaS</span><span class="tag tr">弹性计费</span></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <h3>✅ 我们解决的核心问题</h3>
+      <div style="font-size:13px;color:var(--txt2);line-height:2.2">
+        <div>① 渠道分散：坐席同时开 10 个 WhatsApp 窗口手动回复</div>
+        <div>② 无数据：不知今日接了多少电话、放弃率多少</div>
+        <div>③ 无自动化：简单问题也要人工处理，成本高</div>
+        <div>④ 老系统难维护：本地 PBX 宕机、扩容难</div>
+        <div>⑤ 合规风险：录音、数据跨境存储缺乏管控</div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>🏆 核心差异化</h3>
+      <div style="font-size:13px;color:var(--txt2);line-height:2.2">
+        <div>🤖 <strong>印尼语 AI</strong>：自研 Bahasa Indonesia NLU + 方言 STT</div>
+        <div>📱 <strong>WhatsApp Business API 深度集成</strong>（官方认证合作伙伴）</div>
+        <div>🏗️ <strong>数据本地化</strong>：雅加达 IDC 专属节点，UU PDP 合规</div>
+        <div>⚡ <strong>5 分钟快速开通</strong>：SaaS 无需部署，当天即用</div>
+        <div>💰 <strong>按坐席弹性计费</strong>：最低 1 坐席起步</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. 功能规划 -->
+<div class="sec" id="feature">
+  <div class="sec-t"><div class="num">3</div>功能规划（MoSCoW 优先级）</div>
+  <div class="g2">
+    <div class="card">
+      <h3>📞 核心通话能力</h3>
+      <div class="fi"><div class="fic fb">📲</div><div><div class="ft">云 PBX 电话系统 <span class="pt p0c">P0·Must</span></div><div class="fd">VoIP 呼入/呼出、IVR 多级菜单、ACD 智能路由、技能组分配</div></div></div>
+      <div class="fi"><div class="fic fg">🎙️</div><div><div class="ft">通话录音与 AI 质检 <span class="pt p0c">P0·Must</span></div><div class="fd">全量录音、印尼语 STT、质检评分、敏感词检测</div></div></div>
+      <div class="fi"><div class="fic fo">🔄</div><div><div class="ft">全渠道接入 <span class="pt p0c">P0·Must</span></div><div class="fd">WhatsApp、电话、Email、LINE 统一工作台与排队分配</div></div></div>
+    </div>
+    <div class="card">
+      <h3>🤖 AI 智能化</h3>
+      <div class="fi"><div class="fic fb">💬</div><div><div class="ft">印尼语智能机器人 <span class="pt p0c">P0·Must</span></div><div class="fd">LLM 意图识别，支持 Bahasa Indonesia，可处理 60%+ 常见问题</div></div></div>
+      <div class="fi"><div class="fic fg">✍️</div><div><div class="ft">坐席辅助 AI <span class="pt p1c">P1·Should</span></div><div class="fd">实时话术推荐、情绪分析、自动摘要、知识库检索</div></div></div>
+      <div class="fi"><div class="fic fp">📊</div><div><div class="ft">预测性拨号 <span class="pt p2c">P2·Could</span></div><div class="fd">AI 预判接听率，自动过滤无效号码，提升外呼效率</div></div></div>
+    </div>
+    <div class="card">
+      <h3>📋 工单与 CRM</h3>
+      <div class="fi"><div class="fic fo">🎫</div><div><div class="ft">工单系统 <span class="pt p0c">P0·Must</span></div><div class="fd">创建/流转/升级、优先级管理、SLA 超时提醒、多人协作</div></div></div>
+      <div class="fi"><div class="fic fb">👤</div><div><div class="ft">客户 360 视图 <span class="pt p1c">P1·Should</span></div><div class="fd">历史交互记录统一展示，标签管理，客户画像</div></div></div>
+      <div class="fi"><div class="fic fg">🔗</div><div><div class="ft">CRM 集成 <span class="pt p1c">P1·Should</span></div><div class="fd">Salesforce、SAP、Odoo 双向同步，开放 Webhook/API</div></div></div>
+    </div>
+    <div class="card">
+      <h3>📈 数据与管理</h3>
+      <div class="fi"><div class="fic fb">📊</div><div><div class="ft">实时监控大屏 <span class="pt p0c">P0·Must</span></div><div class="fd">实时队列、坐席状态、来电热力图，管理员可视化</div></div></div>
+      <div class="fi"><div class="fic fo">📉</div><div><div class="ft">业务报表中心 <span class="pt p0c">P0·Must</span></div><div class="fd">接听率、放弃率、AHT、CSAT、FCR，导出 Excel/PDF</div></div></div>
+      <div class="fi"><div class="fic fp">🔐</div><div><div class="ft">权限与合规管理 <span class="pt p0c">P0·Must</span></div><div class="fd">角色权限、操作审计日志、数据访问控制，UU PDP 合规</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. 竞品分析 -->
+<div class="sec" id="compete">
+  <div class="sec-t"><div class="num">4</div>竞品分析</div>
+  <div class="card" style="overflow-x:auto">
+    <table class="cmp">
+      <thead><tr><th>维度</th><th class="our">🏝️ NusaCall（我们）</th><th>Zendesk</th><th>Freshdesk</th><th>Genesys Cloud</th><th>Mekari（本土）</th></tr></thead>
+      <tbody>
+        <tr><td>印尼语 AI NLU</td><td class="our"><span class="ck">✓</span> 自研专项优化</td><td><span class="ch">△</span> 基础</td><td><span class="ch">△</span> 有限</td><td><span class="cx">✗</span></td><td><span class="ch">△</span> 部分</td></tr>
+        <tr><td>WhatsApp 官方 API</td><td class="our"><span class="ck">✓</span> 深度集成</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ch">△</span></td><td><span class="ck">✓</span></td></tr>
+        <tr><td>印尼数据本地化</td><td class="our"><span class="ck">✓</span> 雅加达 IDC</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ch">△</span> 按需</td><td><span class="ck">✓</span></td></tr>
+        <tr><td>UU PDP 合规认证</td><td class="our"><span class="ck">✓</span> 内置合规</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ch">△</span></td></tr>
+        <tr><td>印尼本地支付（IDR）</td><td class="our"><span class="ck">✓</span></td><td><span class="cx">✗</span> USD</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td></tr>
+        <tr><td>起步价（/坐席/月）</td><td class="our">Rp 299,000</td><td>~Rp 300K</td><td>~Rp 237K</td><td>~Rp 1.2M</td><td>Rp 350,000</td></tr>
+        <tr><td>云语音通话</td><td class="our"><span class="ck">✓</span> 云 PBX</td><td><span class="ch">△</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span> 企业级</td><td><span class="ch">△</span></td></tr>
+        <tr><td>本地客服团队</td><td class="our"><span class="ck">✓</span> 雅加达运营</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 5. 商业模式 -->
+<div class="sec" id="biz">
+  <div class="sec-t"><div class="num">5</div>商业模式</div>
+  <div class="g3" style="margin-bottom:14px">
+    <div class="pric">
+      <div class="plan">Starter</div>
+      <div class="price">Rp 299K <span>/坐席/月</span></div>
+      <div class="pidr">≈ $19 USD · 最低 3 坐席起</div>
+      <ul><li>云电话 + WhatsApp 接入</li><li>基础 IVR（3 层）</li><li>工单系统（基础版）</li><li>通话录音（30 天）</li><li>实时监控仪表盘</li><li>标准报表</li></ul>
+      <a class="cta">选择 Starter</a>
+    </div>
+    <div class="pric hot">
+      <div class="plan">⭐ Professional（主推）</div>
+      <div class="price">Rp 599K <span>/坐席/月</span></div>
+      <div class="pidr">≈ $38 USD · 含完整 AI 套餐</div>
+      <ul><li>包含 Starter 全部功能</li><li>印尼语 AI 机器人</li><li>坐席辅助 AI</li><li>全渠道（+LINE, Email）</li><li>客户 360 视图</li><li>高级报表 + 导出</li><li>录音保留 180 天</li></ul>
+      <a class="cta">选择 Professional</a>
+    </div>
+    <div class="pric">
+      <div class="plan">Enterprise</div>
+      <div class="price">定制 <span>联系销售</span></div>
+      <div class="pidr">私有化部署可选</div>
+      <ul><li>包含 Pro 全部功能</li><li>私有部署 / 混合云</li><li>定制化 AI 模型训练</li><li>SLA 99.99%</li><li>专属客户成功经理</li><li>CRM/ERP 深度集成</li><li>录音无限存储</li></ul>
+      <a class="cta">联系销售</a>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="card"><h3>💰 收入预测（3 年）</h3><div style="font-size:13px;color:var(--txt2);line-height:2.2"><div>2026（商业化 6 个月）：ARR 目标 <strong>¥2,000 万</strong>，获客 50 家</div><div>2027：ARR 目标 <strong>¥8,000 万</strong>，200 家，NRR > 115%</div><div>2028：ARR 目标 <strong>¥2.5 亿</strong>，市占率 5%，盈亏平衡</div></div></div>
+    <div class="card"><h3>🛒 GTM 策略</h3><div style="font-size:13px;color:var(--txt2);line-height:2.2"><div>📍 <strong>雅加达建立本地运营团队</strong>（销售 + CS + 技术支持）</div><div>🤝 <strong>渠道合作</strong>：与 IT 分销商、Telkomsel 合作</div><div>🎯 <strong>优先攻</strong> eCommerce 和 FinTech 赛道</div><div>🆓 <strong>免费试用 30 天</strong>，PLG 驱动低成本获客</div></div></div>
+  </div>
+</div>
+
+<!-- 6. 路线图 -->
+<div class="sec" id="roadmap">
+  <div class="sec-t"><div class="num">6</div>产品路线图</div>
+  <div class="g2">
+    <div class="card">
+      <div class="tl">
+        <div class="tli"><div class="tld done"></div><div class="tldate">2026 Q1 · 当前</div><div class="tltit">🔬 立项 & 基础建设</div><div class="tldes">市场调研、产品立项、雅加达 IDC 选型、核心团队组建（含本地 BD）</div></div>
+        <div class="tli"><div class="tld"></div><div class="tldate">2026 Q2</div><div class="tltit">🛠️ MVP 开发</div><div class="tldes">云 PBX + WhatsApp + 工单 + 仪表盘，取得 KOMINFO 电信牌照</div></div>
+        <div class="tli"><div class="tld"></div><div class="tldate">2026 Q3</div><div class="tltit">🧪 封测 & 打磨</div><div class="tldes">10 家种子客户内测，印尼语 AI 机器人接入，本地化 UI 完善</div></div>
+        <div class="tli"><div class="tld"></div><div class="tldate">2026 Q4</div><div class="tltit">🚀 正式上线</div><div class="tldes">公开发布，雅加达线下发布会，Starter / Pro 套餐开放，渠道招募</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="tl">
+        <div class="tli"><div class="tld"></div><div class="tldate">2027 Q1</div><div class="tltit">📈 增长阶段</div><div class="tldes">坐席辅助 AI、CRM 集成市场、预测拨号模块开放</div></div>
+        <div class="tli"><div class="tld"></div><div class="tldate">2027 Q2-Q3</div><div class="tltit">🌐 东南亚扩张</div><div class="tldes">以印尼为模板复制马来西亚、泰国市场</div></div>
+        <div class="tli"><div class="tld"></div><div class="tldate">2027 Q4</div><div class="tltit">🤖 AI 全面升级</div><div class="tldes">生成式 AI 坐席、语音情绪分析、实时多语言翻译</div></div>
+        <div class="tli"><div class="tld"></div><div class="tldate">2028+</div><div class="tltit">🏆 领导地位</div><div class="tldes">目标：东南亚 Call Center SaaS 市场 Top 3</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. 风险 -->
+<div class="sec" id="risk">
+  <div class="sec-t"><div class="num">7</div>风险分析</div>
+  <div class="g2">
+    <div class="card">
+      <h3>⚠️ 主要风险</h3>
+      <div class="ri"><div class="rl rh">高</div><div><div class="rt2">合规风险：UU PDP 执法不确定</div><div class="rd">应对：提前完成本地化，聘本地法律顾问，与 BSSN 保持沟通</div></div></div>
+      <div class="ri"><div class="rl rh">高</div><div><div class="rt2">本地竞品低价竞争</div><div class="rd">应对：差异化 AI 能力 + 腾讯云稳定性背书，聚焦中大型客户</div></div></div>
+      <div class="ri"><div class="rl rm">中</div><div><div class="rt2">WhatsApp API 政策变化</div><div class="rd">应对：多渠道分散（LINE、Telegram、自有 SDK），保持 Meta 官方合作</div></div></div>
+      <div class="ri"><div class="rl rm">中</div><div><div class="rt2">印尼本地人才招募难</div><div class="rd">应对：与 UI、ITB 等高校合作，腾讯品牌背书 + 有竞争力本地薪资</div></div></div>
+      <div class="ri"><div class="rl rlo">低</div><div><div class="rt2">汇率波动（IDR/CNY）</div><div class="rd">应对：成本端本地化，金融对冲工具控制汇率敞口</div></div></div>
+    </div>
+    <div class="card">
+      <h3>📋 团队与资源需求</h3>
+      <div style="font-size:13px;color:var(--txt2);line-height:2.2">
+        <div>👨‍💼 <strong>产品团队</strong>：1 PM（出海背景）+ 1 UX/UI（印尼本土经验）</div>
+        <div>👨‍💻 <strong>研发团队</strong>：后端 4 + 前端 2 + AI/NLP 2 + QA 2</div>
+        <div>🤝 <strong>本地团队</strong>：雅加达 BD 2 + CS 2 + 法务顾问 1</div>
+        <div>🏗️ <strong>基础设施</strong>：腾讯云雅加达节点 + PSTN 对接（Telkomsel/Indosat）</div>
+      </div>
+      <div style="margin-top:14px"><div class="tags"><span class="tag tb" style="font-size:13px;padding:5px 14px">立项申请总预算：¥2,300 万（18 个月）</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 跳转原型图 -->
+<div class="proto-entry">
+  <h2>🖥️ 查看产品原型图</h2>
+  <p>包含仪表盘、来电工作台、工单系统、报表中心等 4 个核心页面的高保真线框图</p>
+  <a href="nusacall_prototype.html">打开原型图 →</a>
+</div>
+
+</div>
+</body>
+</html>
